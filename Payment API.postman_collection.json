@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "42b11e7d-f0af-4d88-ae3c-92663df00386",
+		"name": "Payment API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account API",
+			"description": "",
+			"item": [
+				{
+					"name": "Creat Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"accountName\": \"Otto\",\n\t\"otherDetails\": \"Other Details\",\n\t\"currentBalance\": \"1000\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/accounts-ws/accounts/df1b7468-ef9f-4c19-a0c4-91ae7253e54d/accounts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"accounts-ws",
+								"accounts",
+								"df1b7468-ef9f-4c19-a0c4-91ae7253e54d",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer API",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"customerName\": \"Oscar Ikomi\",\n\t\"customerLogin\": {\n\t\t\"username\": \"oscibanj\",\n\t\t\"password\": \"oscibanj\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}/customers-ws/customers",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers-ws",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE1NzEyNTMyODJ9.ELort6i1cnYgQ8TAcpZPqK3dovO9gYcdRLcVm3-XgNBhrs4AEh1njDVJDNVq1Tk5DR5_akVAEgDaNbkDoMMH5A"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/customers-ws/customers/df1b7468-ef9f-4c19-a0c4-91ae7253e54d/accounts?page=0&size=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers-ws",
+								"customers",
+								"df1b7468-ef9f-4c19-a0c4-91ae7253e54d",
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"otherDetails\": \"Testing\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/customers-ws/customers/df1b7468-ef9f-4c19-a0c4-91ae7253e54d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers-ws",
+								"customers",
+								"df1b7468-ef9f-4c19-a0c4-91ae7253e54d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer's Account",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"otherDetails\": \"Testing\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/customers-ws/customers/df1b7468-ef9f-4c19-a0c4-91ae7253e54d/accounts/df1b7468-ef9f-4c19-a0c4-91ae7253e54d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers-ws",
+								"customers",
+								"df1b7468-ef9f-4c19-a0c4-91ae7253e54d",
+								"accounts",
+								"df1b7468-ef9f-4c19-a0c4-91ae7253e54d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/customers-ws/customers/df1b7468-ef9f-4c19-a0c4-91ae7253e54d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers-ws",
+								"customers",
+								"df1b7468-ef9f-4c19-a0c4-91ae7253e54d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer's Account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/customers-ws/customers/df1b7468-ef9f-4c19-a0c4-91ae7253e54d/accounts/df1b7468-ef9f-4c19-a0c4-91ae7253e54d",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customers-ws",
+								"customers",
+								"df1b7468-ef9f-4c19-a0c4-91ae7253e54d",
+								"accounts",
+								"df1b7468-ef9f-4c19-a0c4-91ae7253e54d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer Login API",
+			"description": "",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"oscibanj\",\n\t\"password\": \"oscibanj\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/customerlogin-ws/customerLogin/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customerlogin-ws",
+								"customerLogin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
